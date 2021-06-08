@@ -16,4 +16,17 @@ ress[((count++))]=${res[1]}
 ress[((count++))]=${res[2]}
 ress[((count++))]=${res[3]}
 ress[((count++))]=${res[4]}
-echo "The 4 results are" ${ress[@]}
+for((i=0;i<4;i++))
+do
+	for((j=$(($i+1));j<4;j++))
+	do
+		if [[ ress[$j] -gt ress[$i] ]]
+		then
+			temp=${ress[$j]}
+			ress[$j]=${ress[$i]}
+			ress[$i]=$temp
+		fi
+	done
+done
+echo "The 4 results are" ${res[@]}
+echo "The 4 results in descending order are" ${ress[@]}
