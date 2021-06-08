@@ -20,7 +20,7 @@ for((i=0;i<4;i++))
 do
 	for((j=$(($i+1));j<4;j++))
 	do
-		if [[ ress[$j] -gt ress[$i] ]]
+		if [[ ress[$i] -gt ress[$j] ]]
 		then
 			temp=${ress[$j]}
 			ress[$j]=${ress[$i]}
@@ -29,4 +29,4 @@ do
 	done
 done
 echo "The 4 results are" ${res[@]}
-echo "The 4 results in descending order are" ${ress[@]}
+echo "The 4 results in ascending order are" ${ress[@]}
