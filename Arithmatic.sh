@@ -1,5 +1,6 @@
 #!/bin/bash -x
 declare -A res
+count=0
 read -p "Enter first number:" num1
 read -p "Enter second number:" num2
 read -p "Enter third number:" num3
@@ -11,4 +12,8 @@ result3=$(($num3+$num1/$num2))
 res[3]=$result3
 result4=$(($num1%$num2+$num3))
 res[4]=$result4
-echo "The 4 results are" ${res[@]}
+ress[((count++))]=${res[1]}
+ress[((count++))]=${res[2]}
+ress[((count++))]=${res[3]}
+ress[((count++))]=${res[4]}
+echo "The 4 results are" ${ress[@]}
